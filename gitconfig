@@ -1,0 +1,50 @@
+[user]
+  name = Mikael Konutgan
+  email = me@kmikael.com
+[core]
+  excludesfile = /Users/kmikael/.gitignore
+  quotepath = false
+  editor = vim
+[alias]
+  s = status
+  c = commit
+  l = log
+  update = !git fetch upstream && git rebase upstream/`git rev-parse --abbrev-ref HEAD`
+[color]
+  ui = true
+[color "branch"]
+  current = yellow bold
+  local = green bold
+  remote = cyan bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+[apply]
+  whitespace = nowarn
+[credential]
+  helper = osxkeychain
+[help]
+  autocorrect = 1
+[push]
+  default = simple
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+[filter "hawser"]
+  clean = git hawser clean %f
+	  smudge = git hawser smudge %f
+  required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[pull]
+	rebase = true
+[diff]
+	compactionHeuristic = true

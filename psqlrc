@@ -1,0 +1,15 @@
+-- \timing
+
+\set QUIET 1
+\set VERBOSITY verbose
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+
+\x auto
+
+\pset linestyle unicode
+\pset border 2
+\pset null ¤
+\pset format wrapped
+\pset pager
