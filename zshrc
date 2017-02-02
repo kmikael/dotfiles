@@ -42,14 +42,11 @@ export CLICOLOR=1
 # Postgres
 export PGDATA=/usr/local/var/postgres
 
-# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/xcode/xcode.plugin.zsh
+# Open `.xcworkspace` or `.xcodeproj`
 function xc {
-  xcode_proj=`ls | grep "\.xc" | sort -r | head -1`
-  if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
-  then
-    echo "No xcworkspace/xcodeproj file found in the current directory."
-  else
-    echo "Found $xcode_proj"
-    open -a Xcode "$xcode_proj"
+  proj="$(ls | grep "\.xcodeproj\|\.xcworkspace" | sort -r | head -1)"
+  if [ -e "$proj" ]
+  then open -a Xcode "$proj"
+  else echo "No xcworkspace/xcodeproj file found in current directory."
   fi
 }
